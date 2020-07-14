@@ -1,10 +1,10 @@
 .idea
 *py[cod]
 Test
-logs/
-report/html/
-report/xlsx/
-report/resultdata/
+logs/*
+report/html/*
+report/xlsx/*
+report/resultdata/*
 venv
 test.py
 report_result.html
