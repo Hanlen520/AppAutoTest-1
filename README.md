@@ -51,7 +51,6 @@
 ## **技术文档**
 
 #### 1.unittest.TestSuite()  生成测试套件
-
     1.先实例化套件
     suite=unittest.TestSuite() (suite：为TestSuite实例化的名称)
     2. 添加某个测试用例的具体测试方法：
@@ -63,7 +62,6 @@
     runner.run(suite)           2. 执行： (suite：为测试套件名称)
 
 #### 2.unittest.TestLoader()   用于生成测试套件
-
     TestCases = unittest.TestLoader().loadTestsFromModule(module)  从模块 py文件 中加载所有测试方法    参数py文件名
     TestCases = unittest.TestLoader().loadTestsFromTestCase(classname)     从类中添加  这个类中的所有的测试方法   参数类名，类必须继承unittest.TestCase
     TestCases = unittest.TestLoader().loadTestsFromName(Name)     加载某个单独的测试方法 必须是字符串   “module.class.def”
