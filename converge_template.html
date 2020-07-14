@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>测试结果汇总</title>
+    <style>
+        .fail {
+            color: red;
+			width: 7emem;
+			text-align: center;
+        }
+        .success {
+            color: green;
+			width: 7emem;
+			text-align: center;
+        }
+		.details-col-elapsed {
+			width: 7em;
+			text-align: center;
+		}
+		.details-col-msg {
+			width: 7em;
+			text-align: center;
+			background-color:#ccc;
+		}
+
+    </style>
+</head>
+<body>
+<div>
+<div><h1 align="center">Test Converge</h1></div>
+
+    <table  border="thin" cellspacing="0" cellpadding="0" style="margin: auto;">
+        <tr >
+            <th class='details-col-msg'>case中文名称</th>
+            <th class='details-col-msg'>case英文名称</th>
+            <th class='details-col-msg'>执行结果</th>
+            <th class='details-col-msg'>开始时间</th>
+            <th class='details-col-msg'>执行时间</th>
+            <th class='details-col-msg'>详细信息</th>
+            <th class='details-col-msg'>测试人</th>
+            <th class='details-col-msg'>case描述</th>
+            <th class='details-col-msg'>文件路径</th>
+        </tr>
+        {% for r in results %}
+        <tr >
+            <td class='details-col-elapsed'>{{r.info.title}}</td>
+            <td class='details-col-elapsed'>{{r.html_name}}</td>
+            <td class="{{'success' if r.test_result  else 'fail'}}">{{"成功" if r.test_result else "失败"}}</td>
+{#            <td class="{{'success' if r.result == "true"  else 'fail'}}">{{r.test_result }}</td>#}
+            <td class='details-col-elapsed'>{{r.start_time}}</td>
+            <td class='details-col-elapsed'>{{r.time}}s</td>
+            <td class='details-col-elapsed'><a href="{{r.html_path}}" target="view_window">详细信息</a></td>
+            <td class='details-col-elapsed'>{{r.info.author}}</td>
+            <td class='details-col-elapsed'>{{r.info.desc}}</td>
+            <td class='details-col-elapsed'>{{r.info.path}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
